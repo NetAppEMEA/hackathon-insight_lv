@@ -1,0 +1,21 @@
+Setup SSH Keys on Mac and copy to RaspberryPi units
+
+1.  Run ssh-keygen and then copy new keys to rasppi
+    mac%> cd ~/.ssh
+    mac%> ssh-keygen -t rsa -C 'michael.johnson@netapp.com'
+    [OPTIONAL] mac%> ssh-keygen -t rsa -C 'michael.johnson@netapp.com' -f id_ansible
+
+2.    [repeat 'ssh-copy-id ' step for all raspberrypi units]
+    mac%> ssh-copy-id pi@10.69.69.xx
+    mac%> ping pi@10.69.69.xx    => no password should be required
+
+3.  Ping test using Ansible
+    mac%> ansible all -m ping --inventory-file=ansible_hosts -u pi
+    [OPTIONAL] mac%> ansible all -m ping --inventory-file=ansible_hosts -u pi --private-key=~/.ssh/id_ansible
+
+
+4.  Run apt-get update
+    mac%> ansible all -a "sudo apt-get update" -f 2 -u pi --inventory-file=ansible_hosts
+    [OPTIONAL] mac%> ansible all -a "sudo apt-get update" -f 2 -u pi --inventory-file=ansible_hosts --private-key=~/.ssh/id_ansible
+
+5.  Run setup playbook.yml
