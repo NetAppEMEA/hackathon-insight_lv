@@ -271,11 +271,7 @@ def photo():
     try:
         print("--- Post image to Elasticsearch at: " +
               conf['elasticsearch_host'])
-        es = Elasticsearch(
-            [conf['elasticsearch_host']],
-            port=443,
-            use_ssl=True,
-        )
+        es = Elasticsearch( [conf['elasticsearch_host']])
         ts = int(round(time.time() * 1000))
         # data to post
         res = es.index(index='raspberries',
