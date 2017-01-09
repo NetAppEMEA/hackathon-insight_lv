@@ -25,7 +25,7 @@
 # Python pagackage installation instructions - using 'pip'
 # pip is a package management system used to install and manage python packages
 #---------------------------------------
-# %> pip install flask flask-restful pillow boto3 elasticsearch picamera
+# %> pip install flask flask-restful pillow boto3 elasticsearch==2.3.0 picamera
 
 
 #---------------------------------------
