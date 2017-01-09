@@ -1,3 +1,28 @@
+Install Ansbile
+  Windows 10
+    Install Ubunto Bash Shell 
+      http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
+    Follow Ubunto instructions below
+
+  Mac
+    Install Xcode
+    $ sudo easy_install pip
+    $ sudo pip install ansible --quiet
+
+  Redhat/Centos
+    $ sudo yum install ansible
+
+  Ubunto
+    $ sudo apt-get install software-properties-common
+    $ sudo apt-add-repository ppa:ansible/ansible
+    $ sudo apt-get update
+    $ sudo apt-get install ansible
+
+  Other Platforms
+    http://docs.ansible.com/ansible/intro_installation.html
+
+
+
 Setup SSH Keys on Mac and copy to RaspberryPi units
 
 1.  Run ssh-keygen and then copy new keys to rasppi
@@ -19,3 +44,4 @@ Setup SSH Keys on Mac and copy to RaspberryPi units
     [OPTIONAL] mac%> ansible all -a "sudo apt-get update" -f 2 -u pi --inventory-file=ansible_hosts --private-key=~/.ssh/id_ansible
 
 5.  Run setup playbook.yml
+    mac%> ansible-playbook playbook.yml -i hosts --become
