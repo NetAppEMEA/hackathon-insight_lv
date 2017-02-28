@@ -8,6 +8,9 @@ Install Ansbile
     Install Xcode
     $ sudo easy_install pip
     $ sudo pip install ansible --quiet
+    Install ssh-copy-id
+    $ brew install ssh-copy-id
+    $ curl -L https://raw.githubusercontent.com/beautifulcode/ssh-copy-id-for-OSX/master/install.sh | sh 
 
   Redhat/Centos
     $ sudo yum install ansible
