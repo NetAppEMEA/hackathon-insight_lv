@@ -66,7 +66,7 @@ One service is available:
   * `root@93330ed8220c:/# exit`
 
 5. Or a webserver with nginx latest:
-  * `run -d -p 80:80 --name webserver nginx`
+  * `docker run -d -p 80:80 --name webserver nginx`
   * `docker ps`
 
   ```
